@@ -4,6 +4,6 @@
  
  To download Victory, run this command:
  
-   npm install victory
+ -npm install victory
     
- then you type npm run to open project.
+ then you type "npm start" to open project.
