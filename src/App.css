@@ -1,54 +1,109 @@
-.Field{
-  width: 95vw;
-  height: 100vh;
+/* Genel Arka Plan */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(180deg, #00AFA1, #0D0D0D, #0D0D0D); /* Gradient arka plan */
+  min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin: 0px;
-  padding: 0px;
-  
+  box-sizing: border-box;
 }
 
-h1{
-  font-size: 2rem;
+.Field {
+  width: 90%;
+  max-width: 1200px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.65); /* Şeffaf cam efekti */
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
   font-weight: bold;
 }
 
-.Input-Area{
-  margin-top: 10px;
-  width: 100%;
-}
-
-.First-Buttons-Part{
-  width: 100vw;
+/* İlk ve İkinci Butonlar Alanı */
+.First-Buttons-Part, .Second-Buttons-Part {
   display: flex;
-  align-items: start;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 10px;
-  margin-left: 190px;
+  margin-bottom: 20px;
 }
 
-.Second-Buttons-Part{
-  margin-top: 10px;
-  width: 100%;
-  display: flex;
-  align-items: start;
-  gap: 10px;
-  margin-left: 100px;
+/* Buton Stili */
+button {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
 }
 
-.fiels{
-  display: flex;
-  align-items: center;
-  margin-left: 50px;
+button:hover {
+  background-color: black;
+  color: white;
+  border-color: white;
 }
 
-.Graph-Part{
-  margin-left: 70px;
+/* Input ve Tablo Alanları */
+.Input-Area, .Graph-Part {
   margin-top: 20px;
-  width: 100%;
-  height: 40vh;
-  display: flex;
-  justify-content: left ;
-  align-items: center;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+/* Tablo için Genel Ayarlar */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+th {
+  background-color: rgba(255, 255, 255, 0.6);
+  font-weight: bold;
+}
+
+td input {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.biggestResult {
+  background-color: lightgreen;
+  font-weight: bold;
+}
+
+/* Tablo Alanının Kaydırılabilir Hale Getirilmesi */
+.table-container {
+  max-width: 100%; /* Ekran boyutunu aşmaz */
+  overflow: hidden; /* Varsayılan olarak kaydırma kapalı */
+}
+
+/* Genişliği Belirtilen Değerden Büyükse Kaydırılabilir */
+@media screen and (max-width: 768px) {
+  .table-container {
+    overflow-x:scroll; /* Yatay kaydırma aktif */
+  }
+}
