@@ -144,9 +144,6 @@ function App() {
               <ButtonPropt name="Calculate" bgColor="white" color="black" onClickFunc={()=>{setReRender(!reRender);valueReaderAndCalculator()}}/>
               <ButtonPropt name="Reset Form" bgColor="white" color="black" onClickFunc={()=>{valueFormatter()}}/>
             </div>
-            <div className='Graph-Part'>
-                <Chart1 resultList = {resultArray} jobList = {jobValues} />
-            </div>
           </div>
         </div>
       </div>
