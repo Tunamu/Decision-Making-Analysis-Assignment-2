@@ -1,94 +1,16 @@
 /* Genel Arka Plan */
 body {
   margin: 0;
-  padding: 25px; /* Tüm elementlerde padding 25px */
+  padding-top: 0;
   font-family: Arial, sans-serif;
-  background: linear-gradient(180deg, #00AFA1, #0D0D0D, #0D0D0D); /* Gradient arka plan */
+  background: linear-gradient(180deg, #00AFA1,#00AFA1, #0D0D0D,#0D0D0D, #0D0D0D); /* Gradient arka plan */
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   box-sizing: border-box;
   color: white;
 }
 
-.Field {
-  width: 90%;
-  max-width: 1200px;
-  padding: 25px;
-  background: rgba(0, 0, 0, 0.65); /* Şeffaf cam efekti */
-  backdrop-filter: blur(10px);
-  border-radius: 15px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
-}
-
-h1 {
-  text-align: center;
-  font-weight: bold;
-}
-
-/* İlk ve İkinci Butonlar Alanı */
-.First-Buttons-Part, .Second-Buttons-Part {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-}
-
-/* Buton Stili */
-button {
-  background-color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  transition: all 0.3s ease-in-out;
-  color: black;
-}
-
-/* Input ve Chart Alanları */
-.Input-Area, .Graph-Part {
-  border-radius: 10px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-  margin: 0;
-  padding: 25px;
-}
-
-/* Chart'ı Ortalama */
-.Graph-Part {
-  display: flex;
-  justify-content: center; /* Yatayda ortala */
-  align-items: center;    /* Dikeyde ortala */
-}
-
-/* Tablo için Genel Ayarlar */
-table {
+.App {
   width: 100%;
-  border-collapse: collapse;
-  text-align: center;
-  margin: 0;
-}
-
-th, td {
-  border: 1px solid #ddd;
-  padding: 8px;
-}
-
-th {
-  font-weight: bold;
-}
-
-/* Tablo Arka Planı Kaldırıldı */
-table {
-  background: none;
-}
-
-td input {
-  width: 100%;
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
 }
 
 .biggestResult {
@@ -101,16 +23,106 @@ td input {
   max-width: 100%; /* Ekran boyutunu aşmaz */
   overflow-x: auto; /* Yatay kaydırma açık */
   margin: 0;
-  padding: 25px;
 }
 
-/* Responsive: Mobil için Ayar */
+/* Header */
+.Header {
+  top: 0;
+  left: 0;
+  width: auto;
+  height: 70px;
+  background: rgba(0, 0, 0, 0.65); /* Şeffaf cam efekti */
+  backdrop-filter: blur(10px);
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0w; /* Yatay boşluk */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  z-index: 1000; /* Üstte kalmasını sağlar */
+  padding: 25px
+}
+
+/* Header Bölümleri */
+.Header-Left {
+  font-size: 48px;
+  font-weight: bold;
+}
+/* İlk ve İkinci Butonlar Alanı */
+.First-Buttons-Part, .Second-Buttons-Part {
+  display: flex;
+  justify-content: center;
+  padding: 25px;
+  gap: 25px;
+}
+
+.Left-Part{
+  display: flex;
+}
+
+.Header-Center {
+  font-size: 28px;
+  font-style: italic;
+  color: #808080;
+  height: fit-content;
+  font-weight: bold;
+  padding: 8px;
+  padding-top: 18px;
+}
+
+.Header-Right{
+  font-size: 24px;
+  font-weight: bold;
+  padding-right: 10px;
+}
+
+/* Ana İçerik */
+.Main-Content {
+  margin-top: 140px; /* Header'ın altına içerik eklemek için */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.Field {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.65); /* Şeffaf cam efekti */
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding:25px;
+}
+
+.Main-Part{
+  padding: 25px;
+  height: auto;
+  display: flex;
+  align-items: center;
+}
+
+/* Responsive: Mobil için Ayarlar */
 @media screen and (max-width: 768px) {
-  .table-container {
-    overflow-x: scroll; /* Yatay kaydırma aktif */
+  .Header {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+    text-align: center;
   }
 
-  table {
-    font-size: 14px; /* Mobilde yazı boyutunu küçült */
+  .Header-Right {
+    margin-top: 10px;
+  }
+
+  .Header-Right button {
+    width: 100px; /* Mobilde düğmelerin genişliği küçültüldü */
+  }
+
+  .Main-Content {
+    margin-top: 160px; /* Header'ın altına içerik bırakma ayarı */
   }
 }

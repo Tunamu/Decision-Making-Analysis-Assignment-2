@@ -117,23 +117,38 @@ function App() {
   }
 
   return (
-    <div className="Field">
-      <h1>Empty Template</h1>
-      <div className="First-Buttons-Part">
-        <ButtonPropt name="Add Parameter"  onClickFunc={()=>setRow(prevRow => prevRow + 1)}/>
-        <ButtonPropt name="Add Alternative"  onClickFunc={()=>setColumn(prevColumn => prevColumn + 1)}/>
+    <div>
+      {/* Header */}
+      <header className="Header">
+        <div className='Left-Part'>
+          <div className="Header-Left">Decidra</div>
+          <div className="Header-Center">“optimal result finding application”</div>
+        </div>
+        <div className="Header-Right">
+          Login or Sign Up
+        </div>
+      </header>
 
-      </div>
-      <div className="Input-Area">
-        <TableFunc rowSize={row} columnSize={column} results={resultArray} biggest={Math.max(...resultArray.filter(value => typeof value === 'number'))}/>
-      </div>
-      <div className="Second-Buttons-Part">
-        <ButtonPropt name="Calculate" bgColor="white" color="black" onClickFunc={()=>{setReRender(!reRender);valueReaderAndCalculator()}}/>
-        <ButtonPropt name="Reset Form" bgColor="white" color="black" onClickFunc={()=>{valueFormatter()}}/>
-      </div>
-      <div className='Graph-Part'>
-          <Chart1 resultList = {resultArray} jobList = {jobValues} />
-      </div>
+        <div className='Main-Part'>
+          <div className="Field">
+            <h1>Empty Template</h1>
+            <div className="First-Buttons-Part">
+              <ButtonPropt name="Add Parameter"  onClickFunc={()=>setRow(prevRow => prevRow + 1)}/>
+              <ButtonPropt name="Add Alternative"  onClickFunc={()=>setColumn(prevColumn => prevColumn + 1)}/>
+
+            </div>
+            <div className="Input-Area">
+              <TableFunc rowSize={row} columnSize={column} results={resultArray} biggest={Math.max(...resultArray.filter(value => typeof value === 'number'))}/>
+            </div>
+            <div className="Second-Buttons-Part">
+              <ButtonPropt name="Calculate" bgColor="white" color="black" onClickFunc={()=>{setReRender(!reRender);valueReaderAndCalculator()}}/>
+              <ButtonPropt name="Reset Form" bgColor="white" color="black" onClickFunc={()=>{valueFormatter()}}/>
+            </div>
+            <div className='Graph-Part'>
+                <Chart1 resultList = {resultArray} jobList = {jobValues} />
+            </div>
+          </div>
+        </div>
       </div>
   );
 }
