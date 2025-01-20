@@ -3,7 +3,7 @@ import ButtonPropt from './templates/ButtonPropt';
 import TableFunc from './templates/TableFunc';
 import { useState, useEffect} from 'react';
 import Chart1 from './templates/Chart1';
-import Chart2 from './templates/Chart2';
+//import Chart2 from './templates/Chart2';
 
 function App() {
   
@@ -118,25 +118,28 @@ function App() {
 
   return (
     <div className="Field">
-      <h1>Kepner-Tregoe Method</h1>
+      <h1>Empty Template</h1>
       <div className="First-Buttons-Part">
-        <ButtonPropt name="Add Parameter" bgColor="lightblue" onClickFunc={()=>setRow(prevRow => prevRow + 1)}/>
-        <ButtonPropt name="Add Alternative" bgColor="lightblue" onClickFunc={()=>setColumn(prevColumn => prevColumn + 1)}/>
+        <ButtonPropt name="Add Parameter"  onClickFunc={()=>setRow(prevRow => prevRow + 1)}/>
+        <ButtonPropt name="Add Alternative"  onClickFunc={()=>setColumn(prevColumn => prevColumn + 1)}/>
 
       </div>
       <div className="Input-Area">
         <TableFunc rowSize={row} columnSize={column} results={resultArray} biggest={Math.max(...resultArray.filter(value => typeof value === 'number'))}/>
       </div>
       <div className="Second-Buttons-Part">
-        <ButtonPropt name="Calculate" bgColor="yellowgreen" onClickFunc={()=>{setReRender(!reRender);valueReaderAndCalculator()}}/>
-        <ButtonPropt name="Reset Form" bgColor="yellow" color="black" onClickFunc={()=>{valueFormatter()}}/>
+        <ButtonPropt name="Calculate" bgColor="white" color="black" onClickFunc={()=>{setReRender(!reRender);valueReaderAndCalculator()}}/>
+        <ButtonPropt name="Reset Form" bgColor="white" color="black" onClickFunc={()=>{valueFormatter()}}/>
       </div>
       <div className='Graph-Part'>
           <Chart1 resultList = {resultArray} jobList = {jobValues} />
-          <Chart2 checkboxValues = {checkboxValues} parameterNames = {parameterValues} resultList = {resultArray} weightValues={weightValues}/>
       </div>
-    </div>
+      </div>
   );
 }
 
 export default App;
+
+
+/*<Chart2 checkboxValues = {checkboxValues} parameterNames = {parameterValues} resultList = {resultArray} weightValues={weightValues}/>
+     */
